@@ -28,8 +28,7 @@ public class SuperArray {
 		
     //~~~~~METHODS~~~~~
     //default constructor – initializes 10-item array
-    public SuperArray() 
-    { 
+    public SuperArray() { 
 	_data = new int[10];
 	_lastPos = -1; //flag to indicate no lastpos yet
 	_size = 0;	
@@ -78,22 +77,28 @@ public class SuperArray {
 
     // ~~~~~~~~~~~~~~ PHASE II ~~~~~~~~~~~~~~
     //adds an item after the last item
-    public void add( int newVal ) { }
-
+    public void add( int newVal ) { 
+	_size += 1;
+	_lastPos += 1;
+	set(_lastPos, newVal );
+    }
 
     //inserts an item at index
     //shifts existing elements to the right
-    public void add( int index, int newVal ) { }
+    public void add( int index, int newVal ) { 
 
+    }
 
     //removes the item at index
-    //shifts elements left to fill in newly-empted slot
-    public void remove( int index ) { }
+    //shifts elements left to fill in newly-emptied slot
+    public void remove( int index ) { 
 
+    }
 
     //return number of meaningful items in _data
-    public int size() { }
-
+    public int size() { 
+	return _size;
+    }
 
     //main method for testing
     public static void main( String[] args ) 
@@ -120,7 +125,7 @@ public class SuperArray {
 	curtis.expand();
 	System.out.println(curtis);
 
-	/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 	SuperArray mayfield = new SuperArray();
 	System.out.println("Printing empty SuperArray mayfield...");
 	System.out.println(mayfield);
@@ -133,7 +138,7 @@ public class SuperArray {
 
 	  System.out.println("Printing populated SuperArray mayfield...");
 	  System.out.println(mayfield);
-
+	/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	  mayfield.remove(3);
 	  System.out.println("Printing SuperArray mayfield post-remove...");
 	  System.out.println(mayfield);
