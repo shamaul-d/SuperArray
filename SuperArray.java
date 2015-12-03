@@ -78,10 +78,10 @@ public class SuperArray {
     // ~~~~~~~~~~~~~~ PHASE II ~~~~~~~~~~~~~~
     //adds an item after the last item
     public void add( int newVal ) {
-	if (_size = _data.length) {
+	if (_size == _data.length) {
 	    expand();
 	}
-	set(_lastPos, newVal ); 
+	set(_size, newVal ); 
 	_size += 1;
 	_lastPos += 1;
     }
@@ -89,7 +89,7 @@ public class SuperArray {
     //inserts an item at index
     //shifts existing elements to the right
     public void add( int index, int newVal ) {
-	if (_size = _data.length) {
+	if (_size == _data.length) {
 	    expand();
 	}
 	for (int ctr = _size; ctr > index; ctr--) {
