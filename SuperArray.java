@@ -77,15 +77,21 @@ public class SuperArray {
 
     // ~~~~~~~~~~~~~~ PHASE II ~~~~~~~~~~~~~~
     //adds an item after the last item
-    public void add( int newVal ) { 
+    public void add( int newVal ) {
+	if (_size = _data.length) {
+	    expand();
+	}
+	set(_lastPos, newVal ); 
 	_size += 1;
 	_lastPos += 1;
-	set(_lastPos, newVal );
     }
 
     //inserts an item at index
     //shifts existing elements to the right
     public void add( int index, int newVal ) {
+	if (_size = _data.length) {
+	    expand();
+	}
 	for (int ctr = _size; ctr > index; ctr--) {
 	    _data[ctr] = _data[ctr-1];
 	}
