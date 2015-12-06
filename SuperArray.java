@@ -1,3 +1,8 @@
+// Team Blah - Shamaul Dilmohamed, Shanjeed Ali
+// APCS1 pd10
+// HW42 -- Array of Titanium
+// 2015-12-06
+
 /*****************************
  * SKELETON for
  * class SuperArray --  A wrapper class for an array. 
