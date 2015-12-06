@@ -121,6 +121,16 @@ public class SuperArray implements ListInt{
 	SuperArray curtis = new SuperArray();
 	ListInt happy = new SuperArray();
 
+	System.out.println(happy);
+	happy.add(30);
+	happy.add(0,118);
+	System.out.println(happy);
+	happy.remove(0);
+	System.out.println(happy);
+	System.out.println(happy.size());
+	System.out.println(happy.get(0));
+	System.out.println(happy.set(4,17));
+
 	System.out.println("Printing empty SuperArray curtis...");
 	System.out.println(curtis);
 
