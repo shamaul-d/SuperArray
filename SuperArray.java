@@ -125,7 +125,7 @@ public class SuperArray implements ListInt{
 	System.out.println(curtis);
 
 	for( int i = 0; i < curtis._data.length; i++ ) {
-	    curtis.ListInt.set(i,i*2);
+	    curtis.set(i,i*2);
 	    curtis._size++; //necessary bc no add() method yet
 	}
 

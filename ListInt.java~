@@ -1,8 +1,0 @@
-public interface ListInt {
-    void add(int n);
-    void add(int index, int n);
-    void remove(int index);
-    int size();
-    int get(int n);
-    int set(int index, int n);
-}
