@@ -1,5 +1,8 @@
+//Team blah -- Shanjeed Ali, Shamaul Dilmohamed
+//APCS1 pd10
+//HW42 -- Array of Titanium
+//2015-12-07
 /*****************************
- * SKELETON for
  * class SuperArray --  A wrapper class for an array. 
  * Maintains functionality:
  *  access value at index
@@ -103,8 +106,8 @@ public class SuperArray implements ListInt{
     //removes the item at index
     //shifts elements left to fill in newly-emptied slot
     public void remove( int index ) { 
-	for (int ctr = _lastPos; ctr > index; ctr--) {
-	    _data[ctr-1] = _data[ctr];
+	for (int ctr = index; ctr < _lastPos; ctr++) {
+	    _data[ctr] = _data[ctr+1];
 	}
 	_size -= 1;
 	_lastPos -= 1;
@@ -118,32 +121,57 @@ public class SuperArray implements ListInt{
     //main method for testing
     public static void main( String[] args ) 
     {
-	SuperArray curtis = new SuperArray();
-	ListInt happy = new SuperArray();
+	ListInt curtis = new SuperArray();
 
 	System.out.println("Printing empty SuperArray curtis...");
 	System.out.println(curtis);
 
-	for( int i = 0; i < curtis._data.length; i++ ) {
+	/*for( int i = 0; i < curtis._data.length; i++ ) {
 	    curtis.set(i,i*2);
 	    curtis._size++; //necessary bc no add() method yet
-	}
+	    }*/
 
-	System.out.println("Printing populated SuperArray curtis...");
+	System.out.println("Using add() to populate curtis.\nPrinting populated SuperArray curtis...");
+	
+	curtis.add(21);
+	curtis.add(18);
+	curtis.add(15);
+	curtis.add(12);
+	curtis.add(9);
+	curtis.add(6);
+	curtis.add(3);
+	
 	System.out.println(curtis);
 
-	System.out.println("testing get()...");
-	for( int i = 0; i < curtis._size; i++ ) {
+	System.out.println("Testing get()...");
+	for( int i = 0; i < curtis.size(); i++ ) {
 	    System.out.print( "item at index" + i + ":\t" );
 	    System.out.println( curtis.get(i) );
 	}
 
-	System.out.println("Expanded SuperArray curtis:");
+	System.out.println("Testing set()...");
+	System.out.println(curtis.set(0,300) + " was replaced with 300");
+
+	System.out.println("Now curtis looks like:\n" + curtis);
+
+	System.out.println("Testing size()...");
+	System.out.println("curtis contains "+curtis.size()+" meaningful ints.");
+
+	System.out.println("Testing add at an index...");
+	curtis.add(1,303);
+	System.out.println("303 was added at index 1:\n"+curtis);
+
+	System.out.println("Testing remove()...");
+	curtis.remove(0);
+	curtis.remove(0);
+	System.out.println("300 and 303 were removed. Now curtis looks like:\n" + curtis);
+	
+	/*System.out.println("Expanded SuperArray curtis:");
 	curtis.expand();
-	System.out.println(curtis);
+	System.out.println(curtis);*/
 
 
-	SuperArray mayfield = new SuperArray();
+	/*SuperArray mayfield = new SuperArray();
 	System.out.println("Printing empty SuperArray mayfield...");
 	System.out.println(mayfield);
 
@@ -171,10 +199,7 @@ public class SuperArray implements ListInt{
 	  System.out.println(mayfield);
 	  mayfield.add(1,77);
 	  System.out.println("Printing SuperArray mayfield post-insert...");
-	  System.out.println(mayfield);
-	/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-	//*****INSERT ANY ADDITIONAL TEST CALLS HERE*****
+	  System.out.println(mayfield);*/
 
     }//end main
 		
